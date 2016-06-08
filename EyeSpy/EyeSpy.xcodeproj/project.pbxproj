@@ -7,21 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		430E204C1D08A7CE00265984 /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 430E204B1D08A7CE00265984 /* StartViewController.m */; };
+		430E204F1D08A80000265984 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 430E204E1D08A80000265984 /* GameViewController.m */; };
+		430E20521D08A80C00265984 /* HighScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 430E20511D08A80C00265984 /* HighScoreViewController.m */; };
+		430E20551D08A81D00265984 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 430E20541D08A81D00265984 /* LoginViewController.m */; };
 		4310B1FD1D089A190037D2D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4310B1FC1D089A190037D2D0 /* main.m */; };
 		4310B2001D089A190037D2D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4310B1FF1D089A190037D2D0 /* AppDelegate.m */; };
-		4310B2031D089A190037D2D0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4310B2021D089A190037D2D0 /* ViewController.m */; };
 		4310B2061D089A190037D2D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4310B2041D089A190037D2D0 /* Main.storyboard */; };
 		4310B2081D089A190037D2D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4310B2071D089A190037D2D0 /* Assets.xcassets */; };
 		4310B20B1D089A190037D2D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4310B2091D089A190037D2D0 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		430E204A1D08A7CE00265984 /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
+		430E204B1D08A7CE00265984 /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
+		430E204D1D08A80000265984 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		430E204E1D08A80000265984 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		430E20501D08A80C00265984 /* HighScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighScoreViewController.h; sourceTree = "<group>"; };
+		430E20511D08A80C00265984 /* HighScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoreViewController.m; sourceTree = "<group>"; };
+		430E20531D08A81D00265984 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		430E20541D08A81D00265984 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		4310B1F81D089A190037D2D0 /* EyeSpy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EyeSpy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4310B1FC1D089A190037D2D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4310B1FE1D089A190037D2D0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4310B1FF1D089A190037D2D0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4310B2011D089A190037D2D0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4310B2021D089A190037D2D0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4310B2051D089A190037D2D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4310B2071D089A190037D2D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4310B20A1D089A190037D2D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -39,6 +48,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		430E20561D08A82E00265984 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				430E20531D08A81D00265984 /* LoginViewController.h */,
+				430E20541D08A81D00265984 /* LoginViewController.m */,
+				430E204A1D08A7CE00265984 /* StartViewController.h */,
+				430E204B1D08A7CE00265984 /* StartViewController.m */,
+				430E204D1D08A80000265984 /* GameViewController.h */,
+				430E204E1D08A80000265984 /* GameViewController.m */,
+				430E20501D08A80C00265984 /* HighScoreViewController.h */,
+				430E20511D08A80C00265984 /* HighScoreViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		4310B1EF1D089A190037D2D0 = {
 			isa = PBXGroup;
 			children = (
@@ -60,9 +84,8 @@
 			children = (
 				4310B1FE1D089A190037D2D0 /* AppDelegate.h */,
 				4310B1FF1D089A190037D2D0 /* AppDelegate.m */,
-				4310B2011D089A190037D2D0 /* ViewController.h */,
-				4310B2021D089A190037D2D0 /* ViewController.m */,
 				4310B2041D089A190037D2D0 /* Main.storyboard */,
+				430E20561D08A82E00265984 /* Controllers */,
 				4310B2071D089A190037D2D0 /* Assets.xcassets */,
 				4310B2091D089A190037D2D0 /* LaunchScreen.storyboard */,
 				4310B20C1D089A190037D2D0 /* Info.plist */,
@@ -149,9 +172,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4310B2031D089A190037D2D0 /* ViewController.m in Sources */,
+				430E204F1D08A80000265984 /* GameViewController.m in Sources */,
+				430E204C1D08A7CE00265984 /* StartViewController.m in Sources */,
 				4310B2001D089A190037D2D0 /* AppDelegate.m in Sources */,
+				430E20551D08A81D00265984 /* LoginViewController.m in Sources */,
 				4310B1FD1D089A190037D2D0 /* main.m in Sources */,
+				430E20521D08A80C00265984 /* HighScoreViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +326,7 @@
 				4310B2111D089A190037D2D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
