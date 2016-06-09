@@ -7,6 +7,7 @@
 //
 
 #import "HighScoreViewController.h"
+#import "User.h"
 
 @interface HighScoreViewController ()
 
@@ -31,13 +32,13 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return [_userDatabase count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    
+    cell.textLabel.text = [NSString stringWithFormat:@"%f",[[_userDatabase objectAtIndex:indexPath.row] eyespy2HighScore]];
     // Configure the cell...
     //    cell.textLabel.text = NSStringFromClass([[_classes objectAtIndex:indexPath.row] class]);
 //    cell.textLabel.text = [[_classes objectAtIndex:indexPath.row] sayName];
