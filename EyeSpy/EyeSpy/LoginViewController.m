@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "User.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameLabel;
@@ -29,14 +30,17 @@
     // Dispose of any resources that can be recreated.
 }
 -(void)initUserDatabase{
-    _userDatabase = [[NSMutableArray alloc] initWithObjects:@"blind guy", @"visionoverrated", @"Jonathan", @"hunter22", nil];
+    User *blindGuy = [[User alloc] initUser:@"blind guy":@"visionoverrated"];
+    User *jonathan = [[User alloc] initUser:@"Jonathan":@"hunter22"];
+    
+//    _userDatabase = [[NSMutableArray alloc] initWithObjects:@"blind guy", @"visionoverrated", @"Jonathan", @"hunter22", nil];
+    _userDatabase = [[NSMutableArray alloc] initWithObjects:blindGuy, jonathan, nil];
 }
 
 -(IBAction)login{
     //checks to see if username is in database, then checks if the password matches
-    NSUInteger userCount = [_userDatabase count];
-    for(int x = 0; x < userCount; x++){
-        if([_usernameLabel.text isEqualToString:_userDatabase[x]] && [_passwordLabel.text isEqualToString:_userDatabase[x+1]]){
+    for(id object in _userDatabase){
+        if([_usernameLabel.text isEqualToString:[object username]] && [_passwordLabel.text isEqualToString:[object password]]){
             [self performSegueWithIdentifier:@"startSegue" sender:self];
         }
     }
@@ -47,9 +51,14 @@
 }
 -(IBAction)createAccount{
     //add the username and label to temporary database
-    [_userDatabase addObject:_usernameLabel.text];
-    [_userDatabase addObject:_passwordLabel.text];
-    NSLog(@"%@",_userDatabase.description);
+    User *newUser = [[User alloc] initUser:_usernameLabel.text:_passwordLabel.text];
+    [_userDatabase addObject:newUser];
+    NSLog(@"%@: %@",newUser.username, newUser.password);
+    //alert that their user account has been created
+//    UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"NO!" message:@"The username and password you entered is incorrect" preferredStyle:UIAlertControllerStyleAlert];
+//    UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"Try again" style:UIAlertActionStyleCancel handler:nil];
+//    [alertView addAction:alertAction];
+//    [self presentViewController:alertView animated:YES completion:nil];
     [self performSegueWithIdentifier:@"startSegue" sender:self];
 }
 

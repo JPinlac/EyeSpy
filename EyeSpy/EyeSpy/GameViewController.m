@@ -35,8 +35,8 @@ Image *displayedImage;
 
 - (void)checkUserTap:(UITapGestureRecognizer *)recognizer {
     CGPoint location = [recognizer locationInView:self.view];
-    NSNumber *myXFloat = [NSNumber numberWithFloat:location.x];
-    NSNumber *myYFloat = [NSNumber numberWithFloat:location.y];
+    NSNumber *myXFloat = [NSNumber numberWithFloat:floor(location.x)];
+    NSNumber *myYFloat = [NSNumber numberWithFloat:floor(location.y)];
     
     
     NSLog(@"%@", myXFloat);

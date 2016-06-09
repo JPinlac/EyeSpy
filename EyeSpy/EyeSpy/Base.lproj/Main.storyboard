@@ -159,7 +159,7 @@
                                     <color key="titleColor" red="0.0" green="1" blue="1" alpha="0.80320581896551724" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="bMF-HG-Izf" kind="modal" id="xLi-3C-KhV"/>
+                                    <segue destination="bMF-HG-Izf" kind="modal" id="Y8R-Ft-T8h"/>
                                 </connections>
                             </button>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eyespy2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="t86-z5-fAP">
@@ -204,7 +204,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pjU-qG-Jv8" id="ocJ-Yf-YPF">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
