@@ -9,10 +9,11 @@
 
 @interface GameViewController ()
 
-
+@property Image *currentImage;
 @end
 
-Image *displayedImage;
+Image *image1;
+Image *image2;
 
 @implementation GameViewController
 
@@ -20,7 +21,7 @@ Image *displayedImage;
     [super viewDidLoad];
     
     
-    [self setImageCordsArray];
+    [self initImage];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(checkUserTap:)];
     [_imageInPlay addGestureRecognizer:tap];
@@ -38,42 +39,41 @@ Image *displayedImage;
     NSNumber *myXFloat = [NSNumber numberWithFloat:floor(location.x)];
     NSNumber *myYFloat = [NSNumber numberWithFloat:floor(location.y)];
     
-    
     NSLog(@"%@", myXFloat);
     NSLog(@"%@", myYFloat);
+
     
-    //myXFloat > displayedImage.location[0][0] && myXFloat < displayedImage.location[0][2]
-    if ( myYFloat > displayedImage.location[0][1] && myYFloat < displayedImage.location[0][3]) {
-        NSLog(@"Yaaak Yaaak Yahhhh");
+    if ( myYFloat > _currentImage.locations[0][1] && myYFloat < _currentImage.locations[0][3] && myXFloat > _currentImage.locations[0][0] && myXFloat < _currentImage.locations[0][2]) {
+        NSLog(@"You Found 6");
+    }else {
+        NSLog(@"Not correct");
     }
-    else {
-        NSLog(@"Done Messed UP");
-    }
+    
 }
 
-- (void)setImageCordsArray {
-    // Set UIImage to the pictures for the game
-    UIImage *picture1 = [UIImage imageNamed:@"eyespy2.jpg"];
-    UIImage *picture2 = [UIImage imageNamed:@"eyespy3.jpeg"];
+
+- (void)initImage{
     
-    // Seting the image in imageView to eqaul eyespy2 image
-//    _imageInPlay.image = picture1;
+    image1 = [[Image alloc] init];
+    image1.locations = @[@[@120, @240, @140, @274], @[@0,@0,@0,@0]];
+    image1.objectsToBeFound = @[@"Number 6", @"Frog"];
+    image1.image = [UIImage imageNamed:@"eyespy2.jpg"];
+    
+    image2 = [[Image alloc] init];
+    image2.locations = @[@[@0, @0, @0, @0], @[@0,@0,@0,@0]];
+    image2.objectsToBeFound = @[@"8 Ball", @"Mask"];
+    image2.image = [UIImage imageNamed:@"eyespy3.jpeg"];
+    
+    
     if([_selectedImage isEqualToString:@"image1"]){
-        _imageInPlay.image = picture1;
+        // UIImageVIew
+        _imageInPlay.image = image1.image;
+        //
+        _currentImage = image1;
+        
     } else {
-        _imageInPlay.image = picture2;
-    }
-    
-    //This is the Image Object with the Arrays holding cords and names of the object to be found
-    displayedImage = [[Image alloc]init];
-    
-    // Set the arrays with the cords of the objects in the Selected image
-    if ( _imageInPlay.image == picture1){
-        displayedImage.location = @[@[@120, @240, @140, @274]];
-        displayedImage.objectToBeFound = @[@"number 6"];
-        NSLog(@"Name:%@\nX: %@\nY: %@", displayedImage.objectToBeFound[0], displayedImage.location[0][0], displayedImage.location[0][1]);
-    } else {
-        NSLog(@"*****************");
+        _imageInPlay.image = image2.image;
+        _currentImage = image2;
     }
 }
 
