@@ -200,7 +200,13 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="I spy a banana." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vY-Ix-CX1">
                                 <rect key="frame" x="20" y="38" width="280" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="IowanOldStyle-Roman" family="Iowan Old Style" pointSize="22"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6K-jf-ZaM">
+                                <rect key="frame" x="103" y="434" width="114" height="41"/>
+                                <fontDescription key="fontDescription" name="IowanOldStyle-Roman" family="Iowan Old Style" pointSize="22"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -214,6 +220,8 @@
                     <connections>
                         <outlet property="foundLabel" destination="6Zw-UX-wCQ" id="nSX-hW-wup"/>
                         <outlet property="imageInPlay" destination="t86-z5-fAP" id="zFv-bc-NCF"/>
+                        <outlet property="objectToFindLabel" destination="0vY-Ix-CX1" id="qmJ-iF-Y2A"/>
+                        <outlet property="timerLabel" destination="M6K-jf-ZaM" id="MwR-2Y-YLQ"/>
                         <outlet property="toGoLabel" destination="lhb-J3-2vR" id="dPd-Og-OUp"/>
                     </connections>
                 </viewController>

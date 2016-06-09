@@ -12,7 +12,7 @@
 
 @property NSString *username;
 @property NSString *password;
-@property NSTimeInterval *eyespy2HighScore;
-@property NSTimeInterval *eyespy3HighScore;
+@property NSTimeInterval eyespy2HighScore;
+@property NSTimeInterval eyespy3HighScore;
 -(id)initUser:username :password;
 @end
