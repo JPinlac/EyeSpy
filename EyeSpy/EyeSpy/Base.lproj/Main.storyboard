@@ -112,28 +112,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOr-87-6nQ">
-                                <rect key="frame" x="107" y="487" width="106" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Start Game">
-                                    <color key="titleColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="0.5" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="PmT-aQ-9fx" kind="modal" id="GAm-mi-qDD"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="eyespy2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="LQc-KK-T1u">
-                                <rect key="frame" x="40" y="62" width="240" height="128"/>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eyespy2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="LQc-KK-T1u">
+                                <rect key="frame" x="0.0" y="94" width="320" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="X54-UK-jDd"/>
+                                    <constraint firstAttribute="height" constant="200" id="i6e-ah-yhN"/>
+                                </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="eyespy3.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="oYc-a0-EhT">
-                                <rect key="frame" x="40" y="257" width="240" height="128"/>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eyespy3.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="oYc-a0-EhT">
+                                <rect key="frame" x="0.0" y="302" width="320" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="1pN-fL-eYU"/>
+                                    <constraint firstAttribute="height" constant="200" id="ahM-yM-tSR"/>
+                                </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a Picture" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tb4-0W-DAh">
+                                <rect key="frame" x="34" y="65" width="253" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="253" id="AEf-7W-17d"/>
+                                    <constraint firstAttribute="height" constant="21" id="fuQ-Y1-Iac"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="IowanOldStyle-Roman" family="Iowan Old Style" pointSize="26"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LQc-KK-T1u" firstAttribute="centerY" secondItem="Zf1-H7-dSl" secondAttribute="centerY" constant="-90" id="FCr-QM-LUf"/>
+                            <constraint firstItem="Tb4-0W-DAh" firstAttribute="centerX" secondItem="Zf1-H7-dSl" secondAttribute="centerX" id="TYP-h3-cZr"/>
+                            <constraint firstItem="oYc-a0-EhT" firstAttribute="centerY" secondItem="Zf1-H7-dSl" secondAttribute="centerY" constant="118" id="W8d-1h-tu7"/>
+                            <constraint firstItem="oYc-a0-EhT" firstAttribute="centerX" secondItem="Zf1-H7-dSl" secondAttribute="centerX" id="ZBM-Ma-h71"/>
+                            <constraint firstItem="Tb4-0W-DAh" firstAttribute="centerY" secondItem="Zf1-H7-dSl" secondAttribute="centerY" constant="-208.5" id="fTq-gz-hKd"/>
+                            <constraint firstItem="LQc-KK-T1u" firstAttribute="centerX" secondItem="Zf1-H7-dSl" secondAttribute="centerX" id="zAa-c7-m02"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="game1" destination="LQc-KK-T1u" id="qbv-0q-H0V"/>
                         <outlet property="game2" destination="oYc-a0-EhT" id="9d6-Nx-QPF"/>
+                        <segue destination="PmT-aQ-9fx" kind="modal" identifier="gameSegue" id="ALJ-Nt-ao8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C6s-ar-vhH" userLabel="First Responder" sceneMemberID="firstResponder"/>

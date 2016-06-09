@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "User.h"
+#import "StartViewController.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameLabel;
@@ -15,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIButton *createAccountButton;
 @property NSMutableArray *userDatabase;
+@property User *currentUser;
 @end
 
 @implementation LoginViewController
@@ -68,6 +70,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    StartViewController *vc = [segue destinationViewController];
+    vc.currentUser = _currentUser;
 }
 
 

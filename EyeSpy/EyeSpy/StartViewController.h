@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "User.h"
 @interface StartViewController : UIViewController
-
+@property User *currentUser;
 @end
