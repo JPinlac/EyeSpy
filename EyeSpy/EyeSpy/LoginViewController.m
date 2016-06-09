@@ -33,7 +33,8 @@
 -(void)initUserDatabase{
     User *blindGuy = [[User alloc] initUser:@"blind guy":@"visionoverrated"];
     User *jonathan = [[User alloc] initUser:@"Jonathan":@"hunter22"];
-    
+    blindGuy.eyespy2HighScore = 9000.99;
+    jonathan.eyespy2HighScore = 5;
 //    _userDatabase = [[NSMutableArray alloc] initWithObjects:@"blind guy", @"visionoverrated", @"Jonathan", @"hunter22", nil];
     _userDatabase = [[NSMutableArray alloc] initWithObjects:blindGuy, jonathan, nil];
 }
