@@ -11,15 +11,17 @@
 @interface GameViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *foundLabel;
 @property (weak, nonatomic) IBOutlet UILabel *toGoLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
+@property (weak, nonatomic) IBOutlet UILabel *objectToFindLabel;
 
 @property Image *currentImage;
 @end
 
+// Instance of Image Class
 Image *image1;
 Image *image2;
 
-// TImer Setup
-NSInteger tapCount = 0;
+// Timer Setup
 NSTimer *timer;
 int timeTick;
 
@@ -29,18 +31,22 @@ int timeTick;
     
     [super viewDidLoad];
     
-    timeTick = 10;
+    timeTick = 0;
+    [timer invalidate];
+    
+    timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(myTicker) userInfo:nil repeats:YES];
     
     [self initImage];
     _toGoLabel.text = [NSString stringWithFormat:@"Items to Go: %ld", [_currentImage.objectsToBeFound count]];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(checkUserTap:)];
     [_imageInPlay addGestureRecognizer:tap];
     
+    _objectToFindLabel.text = [NSString stringWithFormat:@"I spy a %@.....", _currentImage.objectsToBeFound[0]];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
@@ -53,12 +59,14 @@ int timeTick;
     NSLog(@"%@", myYFloat);
     NSUInteger numberOfItems = [_currentImage.objectsToBeFound count];
     for(int x = 0; x < numberOfItems; x++){
+        _objectToFindLabel.text = [NSString stringWithFormat:@"I spy a %@.....", _currentImage.objectsToBeFound[x]];
         if ( myYFloat > _currentImage.locations[x][1] && myYFloat < _currentImage.locations[x][3] && myXFloat > _currentImage.locations[x][0] && myXFloat < _currentImage.locations[x][2]) {
             NSLog(@"You found %@", _currentImage.objectsToBeFound[x]);
             _foundLabel.text = [NSString stringWithFormat:@"Found: %i", x + 1];
             if(x + 1 == numberOfItems){
-//                [self setUserhighScore: PUT INTERVAL TIME HERE]
-//                [self performSegueWithIdentifier:@"highScoreSegue" sender:self];
+                [timer invalidate];
+                [self setUserhighScore: timeTick];
+                [self performSegueWithIdentifier:@"highScoreSegue" sender:self];
             }
         }else {
             NSLog(@"Not correct");
@@ -67,11 +75,15 @@ int timeTick;
 }
 
 
-- (void)setUserhighScore:(NSTimeInterval*)userNewTime{
+- (void)setUserhighScore:(int)userNewTime{
     for (User *user in _userDatabase) {
+        NSLog(@"%@",_currentUser.username);
         if (user.username == _currentUser.username) {
-            if (user.eyespy2HighScore < userNewTime){
-                user.eyespy2HighScore = userNewTime;
+            NSLog(@"%d", userNewTime);
+            if (user.eyespy2HighScore < (double)userNewTime) {
+//                NSLog(@"%d", userNewTime);
+                user.eyespy2HighScore = (double)userNewTime;
+                NSLog(@"%f", user.eyespy2HighScore);
             }
         }
     }
@@ -80,6 +92,7 @@ int timeTick;
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     HighScoreViewController *vc =[segue destinationViewController];
     vc.userDatabase = _userDatabase;
+    NSLog(@"%f", _currentUser.eyespy2HighScore);
 }
 
 - (void)initImage{
@@ -97,15 +110,21 @@ int timeTick;
     
     
     if([_selectedImage isEqualToString:@"image1"]){
-        // UIImageVIew
         _imageInPlay.image = image1.image;
-        //
         _currentImage = image1;
         
     } else {
         _imageInPlay.image = image2.image;
         _currentImage = image2;
     }
+}
+
+- (void)myTicker {
+    sleep(1);
+    timeTick++;
+    NSString *timeString =[[NSString alloc] initWithFormat:@"%d", timeTick];
+    _timerLabel.text = timeString;
+   
 }
 
 
