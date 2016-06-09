@@ -176,7 +176,7 @@
                                     <color key="titleColor" red="0.0" green="1" blue="1" alpha="0.80320581896551724" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="bMF-HG-Izf" kind="modal" id="Y8R-Ft-T8h"/>
+                                    <segue destination="bMF-HG-Izf" kind="modal" identifier="highScoreSegue" id="Y8R-Ft-T8h"/>
                                 </connections>
                             </button>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eyespy2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="t86-z5-fAP">
@@ -186,6 +186,18 @@
                                     <constraint firstAttribute="width" constant="280" id="maX-40-3NG"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Found: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Zw-UX-wCQ">
+                                <rect key="frame" x="80" y="322" width="161" height="42"/>
+                                <fontDescription key="fontDescription" name="IowanOldStyle-Roman" family="Iowan Old Style" pointSize="22"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Items to Go: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhb-J3-2vR">
+                                <rect key="frame" x="80" y="372" width="161" height="54"/>
+                                <fontDescription key="fontDescription" name="IowanOldStyle-Roman" family="Iowan Old Style" pointSize="22"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -194,7 +206,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="foundLabel" destination="6Zw-UX-wCQ" id="nSX-hW-wup"/>
                         <outlet property="imageInPlay" destination="t86-z5-fAP" id="zFv-bc-NCF"/>
+                        <outlet property="toGoLabel" destination="lhb-J3-2vR" id="dPd-Og-OUp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WuQ-eo-qc2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -221,7 +235,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pjU-qG-Jv8" id="ocJ-Yf-YPF">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>

@@ -8,6 +8,8 @@
 #import "GameViewController.h"
 
 @interface GameViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *foundLabel;
+@property (weak, nonatomic) IBOutlet UILabel *toGoLabel;
 
 @property Image *currentImage;
 @end
@@ -18,11 +20,11 @@ Image *image2;
 @implementation GameViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     
-    
     [self initImage];
-    
+    _toGoLabel.text = [NSString stringWithFormat:@"Items to Go: %ld", [_currentImage.objectsToBeFound count]];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(checkUserTap:)];
     [_imageInPlay addGestureRecognizer:tap];
     
@@ -41,14 +43,18 @@ Image *image2;
     
     NSLog(@"%@", myXFloat);
     NSLog(@"%@", myYFloat);
-
-    
-    if ( myYFloat > _currentImage.locations[0][1] && myYFloat < _currentImage.locations[0][3] && myXFloat > _currentImage.locations[0][0] && myXFloat < _currentImage.locations[0][2]) {
-        NSLog(@"You Found 6");
-    }else {
-        NSLog(@"Not correct");
+    NSUInteger numberOfItems = [_currentImage.objectsToBeFound count];
+    for(int x = 0; x < numberOfItems; x++){
+        if ( myYFloat > _currentImage.locations[x][1] && myYFloat < _currentImage.locations[x][3] && myXFloat > _currentImage.locations[x][0] && myXFloat < _currentImage.locations[x][2]) {
+            NSLog(@"You found %@", _currentImage.objectsToBeFound[x]);
+            _foundLabel.text = [NSString stringWithFormat:@"Found: %i", x + 1];
+            if(x + 1 == numberOfItems){
+//                [self performSegueWithIdentifier:@"highScoreSegue" sender:self];
+            }
+        }else {
+            NSLog(@"Not correct");
+        }
     }
-    
 }
 
 
@@ -56,6 +62,7 @@ Image *image2;
     
     image1 = [[Image alloc] init];
     image1.locations = @[@[@120, @240, @140, @274], @[@155,@213,@175,@228]];
+
     image1.objectsToBeFound = @[@"Number 6", @"Frog"];
     image1.image = [UIImage imageNamed:@"eyespy2.jpg"];
     
