@@ -45,16 +45,24 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTr-Br-z9j">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTr-Br-z9j">
                                 <rect key="frame" x="56" y="329" width="209" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="A8M-FS-MMe"/>
+                                    <constraint firstAttribute="width" constant="209" id="wzX-JB-kr7"/>
+                                </constraints>
                                 <state key="normal" title="Create Account">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCe-Ip-bNT">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCe-Ip-bNT">
                                 <rect key="frame" x="56" y="291" width="209" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="209" id="0ba-Q2-zyB"/>
+                                    <constraint firstAttribute="height" constant="30" id="qE7-Cb-VIT"/>
+                                </constraints>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -66,10 +74,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="WGc-8P-nlC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-212" id="1Xy-58-Gr3"/>
+                            <constraint firstItem="HCe-Ip-bNT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6dg-mq-ZqE"/>
                             <constraint firstItem="CRb-HI-sqd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="I1Z-kf-keW"/>
                             <constraint firstItem="WGc-8P-nlC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PKf-Gb-znX"/>
+                            <constraint firstItem="HCe-Ip-bNT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="22" id="RKN-74-2O0"/>
                             <constraint firstItem="AP6-8F-pD2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-95" id="RTx-BC-WDj"/>
                             <constraint firstItem="AP6-8F-pD2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fyC-jI-plP"/>
+                            <constraint firstItem="BTr-Br-z9j" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="60" id="kVE-1W-n6s"/>
+                            <constraint firstItem="BTr-Br-z9j" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pBw-tA-w6f"/>
                             <constraint firstItem="CRb-HI-sqd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-38" id="sux-6I-lKA"/>
                         </constraints>
                     </view>
@@ -140,11 +152,19 @@
                                     <segue destination="bMF-HG-Izf" kind="modal" id="xLi-3C-KhV"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="eyespy2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="t86-z5-fAP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eyespy2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="t86-z5-fAP">
                                 <rect key="frame" x="20" y="76" width="280" height="201"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="201" id="ZZS-aC-EnW"/>
+                                    <constraint firstAttribute="width" constant="280" id="maX-40-3NG"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="t86-z5-fAP" firstAttribute="centerY" secondItem="ARl-W7-E6w" secondAttribute="centerY" constant="-107.5" id="jKy-jD-ShN"/>
+                            <constraint firstItem="t86-z5-fAP" firstAttribute="centerX" secondItem="ARl-W7-E6w" secondAttribute="centerX" id="z7E-zY-rc3"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="imageInPlayIV" destination="t86-z5-fAP" id="9tM-pS-Tgg"/>
@@ -174,7 +194,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pjU-qG-Jv8" id="ocJ-Yf-YPF">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
