@@ -54,6 +54,8 @@
     // Pass the selected object to the new view controller.
     GameViewController *vc = [segue destinationViewController];
     vc.selectedImage = _selectedImage;
+    vc.currentUser = _currentUser;
+    vc.userDatabase = _userDatabase;
 }
 
 
