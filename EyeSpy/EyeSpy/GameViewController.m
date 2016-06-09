@@ -6,6 +6,7 @@
 //  Copyright © 2016 Detroit Labs. All rights reserved.
 //
 #import "GameViewController.h"
+#import "HighScoreViewController.h"
 
 @interface GameViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *foundLabel;
@@ -17,11 +18,18 @@
 Image *image1;
 Image *image2;
 
+// TImer Setup
+NSInteger tapCount = 0;
+NSTimer *timer;
+int timeTick;
+
 @implementation GameViewController
 
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    
+    timeTick = 10;
     
     [self initImage];
     _toGoLabel.text = [NSString stringWithFormat:@"Items to Go: %ld", [_currentImage.objectsToBeFound count]];
@@ -49,6 +57,7 @@ Image *image2;
             NSLog(@"You found %@", _currentImage.objectsToBeFound[x]);
             _foundLabel.text = [NSString stringWithFormat:@"Found: %i", x + 1];
             if(x + 1 == numberOfItems){
+//                [self setUserhighScore: PUT INTERVAL TIME HERE]
 //                [self performSegueWithIdentifier:@"highScoreSegue" sender:self];
             }
         }else {
@@ -57,6 +66,21 @@ Image *image2;
     }
 }
 
+
+- (void)setUserhighScore:(NSTimeInterval*)userNewTime{
+    for (User *user in _userDatabase) {
+        if (user.username == _currentUser.username) {
+            if (user.eyespy2HighScore < userNewTime){
+                user.eyespy2HighScore = userNewTime;
+            }
+        }
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    HighScoreViewController *vc =[segue destinationViewController];
+    vc.userDatabase = _userDatabase;
+}
 
 - (void)initImage{
     
