@@ -9,7 +9,7 @@
 #import "GameViewController.h"
 
 @interface GameViewController ()
-@property (weak, nonatomic) IBOutlet UIImageView *imageInPlayIV;
+
 
 @end
 
@@ -18,8 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showGestureForTapRecognizer:)];
-    [_imageInPlayIV addGestureRecognizer:tap];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(checkUserTap:)];
+//    [_imageInPlayIV addGestureRecognizer:tap];
     // Do any additional setup after loading the view.
 }
 
@@ -29,13 +29,19 @@
 }
 
 
-- (void)showGestureForTapRecognizer:(UITapGestureRecognizer *)recognizer {
-    // Get the location of the gesture
-    CGPoint location = [recognizer locationInView:self.view];
-    NSLog(@"The location x is: %f", location.x);
-    NSLog(@"The location y is: %f", location.y);
-    
-}
+//- (void)checkUserTap:(UITapGestureRecognizer *)recognizer {
+//    CGPoint location = [recognizer locationInView:self.view];
+//    NSNumber *myXFloat = [NSNumber numberWithFloat:location.x];
+//    NSNumber *myYFloat = [NSNumber numberWithFloat:location.y];
+//
+//    
+//    if (myXFloat > [objsToBeFound valueForKey:@"topX"] && myXFloat < [objsToBeFound valueForKey:@"bottomX"]) {
+//        NSLog(@"Yaaak Yaaak Yahhhh");
+//    }
+//    else {
+//        NSLog(@"Nope");
+//    }
+//}
 
 
 @end
