@@ -100,18 +100,28 @@
                                     <segue destination="PmT-aQ-9fx" kind="modal" id="GAm-mi-qDD"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="eyespy2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="LQc-KK-T1u">
+                                <rect key="frame" x="40" y="62" width="240" height="128"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="toys.png" translatesAutoresizingMaskIntoConstraints="NO" id="oYc-a0-EhT">
+                                <rect key="frame" x="40" y="257" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="game1" destination="LQc-KK-T1u" id="qbv-0q-H0V"/>
+                        <outlet property="game2" destination="oYc-a0-EhT" id="9d6-Nx-QPF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C6s-ar-vhH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="563" y="406"/>
         </scene>
-        <!--View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="u2N-YH-gnd">
             <objects>
-                <viewController id="PmT-aQ-9fx" sceneMemberID="viewController">
+                <viewController id="PmT-aQ-9fx" customClass="GameViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hQt-T5-sTC"/>
                         <viewControllerLayoutGuide type="bottom" id="kNq-y9-Dqy"/>
@@ -130,9 +140,15 @@
                                     <segue destination="bMF-HG-Izf" kind="modal" id="xLi-3C-KhV"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="eyespy2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="t86-z5-fAP">
+                                <rect key="frame" x="20" y="76" width="280" height="201"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="imageInPlayIV" destination="t86-z5-fAP" id="9tM-pS-Tgg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WuQ-eo-qc2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -177,4 +193,8 @@
             <point key="canvasLocation" x="1334" y="406"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="eyespy2.jpg" width="900" height="546"/>
+        <image name="toys.png" width="1600" height="939"/>
+    </resources>
 </document>
