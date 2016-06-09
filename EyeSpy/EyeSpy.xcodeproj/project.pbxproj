@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		430456C31D09A84B002C0EA9 /* eyespy2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 430456C11D09A84B002C0EA9 /* eyespy2.jpg */; };
+		430456C41D09A84B002C0EA9 /* eyespy3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 430456C21D09A84B002C0EA9 /* eyespy3.jpeg */; };
 		430E204C1D08A7CE00265984 /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 430E204B1D08A7CE00265984 /* StartViewController.m */; };
 		430E204F1D08A80000265984 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 430E204E1D08A80000265984 /* GameViewController.m */; };
 		430E20521D08A80C00265984 /* HighScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 430E20511D08A80C00265984 /* HighScoreViewController.m */; };
@@ -16,11 +18,11 @@
 		4310B2061D089A190037D2D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4310B2041D089A190037D2D0 /* Main.storyboard */; };
 		4310B2081D089A190037D2D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4310B2071D089A190037D2D0 /* Assets.xcassets */; };
 		4310B20B1D089A190037D2D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4310B2091D089A190037D2D0 /* LaunchScreen.storyboard */; };
-		436A63221D08AD9D000BEC6C /* eyespy2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 436A63211D08AD9D000BEC6C /* eyespy2.jpg */; };
-		436A63241D08ADA5000BEC6C /* toys.png in Resources */ = {isa = PBXBuildFile; fileRef = 436A63231D08ADA5000BEC6C /* toys.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		430456C11D09A84B002C0EA9 /* eyespy2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = eyespy2.jpg; sourceTree = "<group>"; };
+		430456C21D09A84B002C0EA9 /* eyespy3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = eyespy3.jpeg; sourceTree = "<group>"; };
 		430E204A1D08A7CE00265984 /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
 		430E204B1D08A7CE00265984 /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
 		430E204D1D08A80000265984 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
@@ -37,8 +39,6 @@
 		4310B2071D089A190037D2D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4310B20A1D089A190037D2D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4310B20C1D089A190037D2D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		436A63211D08AD9D000BEC6C /* eyespy2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = eyespy2.jpg; path = ../../../../eyespy2.jpg; sourceTree = "<group>"; };
-		436A63231D08ADA5000BEC6C /* toys.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = toys.png; path = ../../../../toys.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,10 +91,10 @@
 				4310B2041D089A190037D2D0 /* Main.storyboard */,
 				430E20561D08A82E00265984 /* Controllers */,
 				4310B2071D089A190037D2D0 /* Assets.xcassets */,
-				436A63211D08AD9D000BEC6C /* eyespy2.jpg */,
-				436A63231D08ADA5000BEC6C /* toys.png */,
 				4310B2091D089A190037D2D0 /* LaunchScreen.storyboard */,
 				4310B20C1D089A190037D2D0 /* Info.plist */,
+				430456C11D09A84B002C0EA9 /* eyespy2.jpg */,
+				430456C21D09A84B002C0EA9 /* eyespy3.jpeg */,
 				4310B1FB1D089A190037D2D0 /* Supporting Files */,
 			);
 			path = EyeSpy;
@@ -166,10 +166,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4310B20B1D089A190037D2D0 /* LaunchScreen.storyboard in Resources */,
-				436A63241D08ADA5000BEC6C /* toys.png in Resources */,
 				4310B2081D089A190037D2D0 /* Assets.xcassets in Resources */,
+				430456C41D09A84B002C0EA9 /* eyespy3.jpeg in Resources */,
 				4310B2061D089A190037D2D0 /* Main.storyboard in Resources */,
-				436A63221D08AD9D000BEC6C /* eyespy2.jpg in Resources */,
+				430456C31D09A84B002C0EA9 /* eyespy2.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

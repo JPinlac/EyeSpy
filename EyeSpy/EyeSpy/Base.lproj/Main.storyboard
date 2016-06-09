@@ -103,7 +103,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="eyespy2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="LQc-KK-T1u">
                                 <rect key="frame" x="40" y="62" width="240" height="128"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="toys.png" translatesAutoresizingMaskIntoConstraints="NO" id="oYc-a0-EhT">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="eyespy3.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="oYc-a0-EhT">
                                 <rect key="frame" x="40" y="257" width="240" height="128"/>
                             </imageView>
                         </subviews>
@@ -195,6 +195,6 @@
     </scenes>
     <resources>
         <image name="eyespy2.jpg" width="900" height="546"/>
-        <image name="toys.png" width="1600" height="939"/>
+        <image name="eyespy3.jpeg" width="259" height="194"/>
     </resources>
 </document>
