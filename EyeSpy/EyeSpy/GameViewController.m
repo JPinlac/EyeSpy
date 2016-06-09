@@ -55,12 +55,12 @@ Image *image2;
 - (void)initImage{
     
     image1 = [[Image alloc] init];
-    image1.locations = @[@[@120, @240, @140, @274], @[@0,@0,@0,@0]];
+    image1.locations = @[@[@120, @240, @140, @274], @[@155,@213,@175,@228]];
     image1.objectsToBeFound = @[@"Number 6", @"Frog"];
     image1.image = [UIImage imageNamed:@"eyespy2.jpg"];
     
     image2 = [[Image alloc] init];
-    image2.locations = @[@[@0, @0, @0, @0], @[@0,@0,@0,@0]];
+    image2.locations = @[@[@251, @231, @276, @256], @[@235,@192,@271,@230]];
     image2.objectsToBeFound = @[@"8 Ball", @"Mask"];
     image2.image = [UIImage imageNamed:@"eyespy3.jpeg"];
     
