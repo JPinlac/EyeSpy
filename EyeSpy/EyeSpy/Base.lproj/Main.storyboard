@@ -34,7 +34,7 @@
                                     <constraint firstAttribute="height" constant="30" id="WIp-Uh-m57"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AP6-8F-pD2">
                                 <rect key="frame" x="56" y="174" width="209" height="30"/>
@@ -55,6 +55,9 @@
                                 <state key="normal" title="Create Account">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="createAccount" destination="BYZ-38-t0r" eventType="touchUpInside" id="6bW-de-nta"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCe-Ip-bNT">
                                 <rect key="frame" x="56" y="291" width="209" height="30"/>
@@ -67,7 +70,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="NB1-3B-hOI" kind="modal" id="dkt-4u-hP8"/>
+                                    <action selector="login" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qtq-DH-dGt"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -85,6 +88,13 @@
                             <constraint firstItem="CRb-HI-sqd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-38" id="sux-6I-lKA"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="createAccountButton" destination="BTr-Br-z9j" id="0ja-KU-O9A"/>
+                        <outlet property="loginButton" destination="HCe-Ip-bNT" id="mL0-oi-ImO"/>
+                        <outlet property="passwordLabel" destination="CRb-HI-sqd" id="RYm-d8-iah"/>
+                        <outlet property="usernameLabel" destination="AP6-8F-pD2" id="1nw-lv-Cvm"/>
+                        <segue destination="NB1-3B-hOI" kind="modal" identifier="startSegue" id="2r8-dd-D5Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

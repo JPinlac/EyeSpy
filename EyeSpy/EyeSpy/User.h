@@ -12,5 +12,7 @@
 
 @property NSString *username;
 @property NSString *password;
+@property NSTimeInterval *eyespy2HighScore;
+@property NSTimeInterval *eyespy3HighScore;
 
 @end
