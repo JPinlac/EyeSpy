@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Image.h"
-
+#import "User.h"
 @interface GameViewController : UIViewController
 @property NSString *selectedImage;
 @property (weak, nonatomic) IBOutlet UIImageView *imageInPlay;
