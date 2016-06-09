@@ -9,5 +9,11 @@
 #import "User.h"
 
 @implementation User
-
+-(id)initUser:username :password{
+    self.username = username;
+    self.password = password;
+    self.eyespy2HighScore = 0;
+    self.eyespy3HighScore = 0;
+    return self;
+}
 @end

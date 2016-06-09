@@ -24,6 +24,26 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 0;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    
+    // Configure the cell...
+    //    cell.textLabel.text = NSStringFromClass([[_classes objectAtIndex:indexPath.row] class]);
+//    cell.textLabel.text = [[_classes objectAtIndex:indexPath.row] sayName];
+    return cell;
+}
+
 /*
 #pragma mark - Navigation
 

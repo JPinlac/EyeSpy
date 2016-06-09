@@ -8,7 +8,7 @@
 #import "GameViewController.h"
 
 @interface GameViewController ()
-@property (weak, nonatomic) IBOutlet UIImageView *imageInPlay;
+
 
 @end
 
@@ -35,8 +35,8 @@ Image *displayedImage;
 
 - (void)checkUserTap:(UITapGestureRecognizer *)recognizer {
     CGPoint location = [recognizer locationInView:self.view];
-    NSNumber *myXFloat = [NSNumber numberWithFloat:location.x];
-    NSNumber *myYFloat = [NSNumber numberWithFloat:location.y];
+    NSNumber *myXFloat = [NSNumber numberWithFloat:floor(location.x)];
+    NSNumber *myYFloat = [NSNumber numberWithFloat:floor(location.y)];
     
     
     NSLog(@"%@", myXFloat);
@@ -57,7 +57,12 @@ Image *displayedImage;
     UIImage *picture2 = [UIImage imageNamed:@"eyespy3.jpeg"];
     
     // Seting the image in imageView to eqaul eyespy2 image
-    _imageInPlay.image = picture1;
+//    _imageInPlay.image = picture1;
+    if([_selectedImage isEqualToString:@"image1"]){
+        _imageInPlay.image = picture1;
+    } else {
+        _imageInPlay.image = picture2;
+    }
     
     //This is the Image Object with the Arrays holding cords and names of the object to be found
     displayedImage = [[Image alloc]init];
