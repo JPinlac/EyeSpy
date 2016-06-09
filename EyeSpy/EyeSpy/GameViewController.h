@@ -12,4 +12,6 @@
 @interface GameViewController : UIViewController
 @property NSString *selectedImage;
 @property (weak, nonatomic) IBOutlet UIImageView *imageInPlay;
+@property User *currentUser;
+@property NSMutableArray *userDatabase;
 @end

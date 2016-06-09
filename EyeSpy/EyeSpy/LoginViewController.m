@@ -15,7 +15,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordLabel;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIButton *createAccountButton;
-@property NSMutableArray *userDatabase;
 @property User *currentUser;
 @end
 
@@ -72,6 +71,7 @@
     // Pass the selected object to the new view controller.
     StartViewController *vc = [segue destinationViewController];
     vc.currentUser = _currentUser;
+    vc.userDatabase = _userDatabase;
 }
 
 
