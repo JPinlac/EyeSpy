@@ -9,12 +9,17 @@
 #import "LoginViewController.h"
 
 @interface LoginViewController ()
-
+@property (weak, nonatomic) IBOutlet UITextField *usernameLabel;
+@property (weak, nonatomic) IBOutlet UITextField *passwordLabel;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UIButton *createAccountButton;
+@property NSMutableArray *userDatabase;
 @end
 
 @implementation LoginViewController
 
 - (void)viewDidLoad {
+    [
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
