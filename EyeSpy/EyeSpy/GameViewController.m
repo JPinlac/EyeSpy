@@ -108,5 +108,16 @@ int timeTick;
     }
 }
 
+- (void)myTicker {
+    timeTick--;
+    NSString *timeString =[[NSString alloc] initWithFormat:@"%d", timeTick];
+//    _countDownTimer.text = timeString;
+    
+    if (timeTick == 0) {//stop the timer after 60 seconds
+        [timer invalidate];
+//        [self endGame];
+    }
+}
+
 
 @end
