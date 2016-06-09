@@ -39,19 +39,15 @@ Image *image2;
     NSNumber *myXFloat = [NSNumber numberWithFloat:floor(location.x)];
     NSNumber *myYFloat = [NSNumber numberWithFloat:floor(location.y)];
     
-    
     NSLog(@"%@", myXFloat);
     NSLog(@"%@", myYFloat);
+
     
-    //myXFloat > displayedImage.location[0][0] && myXFloat < displayedImage.location[0][2]
-    // find the number 6
     if ( myYFloat > _currentImage.locations[0][1] && myYFloat < _currentImage.locations[0][3] && myXFloat > _currentImage.locations[0][0] && myXFloat < _currentImage.locations[0][2]) {
         NSLog(@"You Found 6");
-    }
-    else {
+    }else {
         NSLog(@"Not correct");
     }
-    
     
 }
 
