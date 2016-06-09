@@ -162,7 +162,7 @@
                                     <segue destination="bMF-HG-Izf" kind="modal" id="xLi-3C-KhV"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eyespy2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="t86-z5-fAP">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eyespy2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="t86-z5-fAP">
                                 <rect key="frame" x="20" y="76" width="280" height="201"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="201" id="ZZS-aC-EnW"/>
@@ -177,7 +177,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="imageInPlayIV" destination="t86-z5-fAP" id="9tM-pS-Tgg"/>
+                        <outlet property="imageInPlay" destination="t86-z5-fAP" id="zFv-bc-NCF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WuQ-eo-qc2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -204,7 +204,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pjU-qG-Jv8" id="ocJ-Yf-YPF">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
