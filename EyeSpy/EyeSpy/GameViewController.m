@@ -87,7 +87,13 @@ int timeTick;
         if(objectPointer + 1 == numberOfItems){
             [timer invalidate];
             [self setUserhighScore: timeTick];
-            [self performSegueWithIdentifier:@"highScoreSegue" sender:self];
+            UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"Congrats!" message:[NSString stringWithFormat:@"You won\nYou finished in %d seconds", timeTick] preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"High Scores" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action)
+                                          {
+                                              [self performSegueWithIdentifier:@"highScoreSegue" sender:self];
+                                          }];
+            [alertView addAction:alertAction];
+            [self presentViewController:alertView animated:YES completion:nil];
         }
         objectPointer++;
     }else {
