@@ -16,11 +16,13 @@
 
 @end
 
+User *thePlayerHighScore;
+
 @implementation HighScoreViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    thePlayerHighScore = [[User currentUser]init];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -76,10 +78,6 @@
     return result;
 }
 
-//- (IBAction)tryAgainPressed{
-//    [self performSegueWithIdentifier:@"tryAgainSegue" sender:self];
-//}
-
 
 #pragma mark - Navigation
 
@@ -89,7 +87,6 @@
     // Pass the selected object to the new view controller.
     StartViewController *vc =[segue destinationViewController];
     vc.userDatabase = _userDatabase;
-    vc.currentUser = _currentUser;
 }
 
 
