@@ -98,9 +98,13 @@ int timeTick;
 - (void)setUserhighScore:(int)userNewTime{
     for (User *user in _userDatabase) {
         if (_currentUser.username == user.username) {
-            if (user.eyespy2HighScore < (double)userNewTime) {
+            if (user.eyespy2HighScore > (double)userNewTime && _currentImage == image1) {
                 user.eyespy2HighScore = (double)userNewTime;
                 NSLog(@"%f", user.eyespy2HighScore);
+            }
+            if (user.eyespy3HighScore > (double)userNewTime && _currentImage == image2) {
+                user.eyespy3HighScore = (double)userNewTime;
+                NSLog(@"%f", user.eyespy3HighScore);
             }
         }
     }

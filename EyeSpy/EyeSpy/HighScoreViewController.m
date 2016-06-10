@@ -10,6 +10,8 @@
 #import "User.h"
 
 @interface HighScoreViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *table1;
+@property (weak, nonatomic) IBOutlet UITableView *table2;
 
 @end
 
@@ -37,12 +39,25 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    cell.textLabel.text = [NSString stringWithFormat:@"%f",[[_userDatabase objectAtIndex:indexPath.row] eyespy2HighScore]];
-    // Configure the cell...
-    //    cell.textLabel.text = NSStringFromClass([[_classes objectAtIndex:indexPath.row] class]);
-//    cell.textLabel.text = [[_classes objectAtIndex:indexPath.row] sayName];
-    return cell;
+    if(tableView == _table1){
+        NSArray *eyespy2Sorted = [_userDatabase sortedArrayUsingSelector:@selector(compareEyespy2:)];
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+        cell.textLabel.text = [[eyespy2Sorted  objectAtIndex:indexPath.row] username];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%f",[[eyespy2Sorted  objectAtIndex:indexPath.row] eyespy2HighScore]];
+        // Configure the cell...
+        //    cell.textLabel.text = NSStringFromClass([[_classes objectAtIndex:indexPath.row] class]);
+    //    cell.textLabel.text = [[_classes objectAtIndex:indexPath.row] sayName];
+        return cell;
+    } else {
+        NSArray *eyespy3Sorted = [_userDatabase sortedArrayUsingSelector:@selector(compareEyespy3:)];
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell2" forIndexPath:indexPath];
+        cell.textLabel.text = [[eyespy3Sorted objectAtIndex:indexPath.row] username];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%f",[[eyespy3Sorted objectAtIndex:indexPath.row] eyespy3HighScore]];
+        // Configure the cell...
+        //    cell.textLabel.text = NSStringFromClass([[_classes objectAtIndex:indexPath.row] class]);
+        //    cell.textLabel.text = [[_classes objectAtIndex:indexPath.row] sayName];
+        return cell;
+    }
 }
 
 /*
