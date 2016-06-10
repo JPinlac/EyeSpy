@@ -33,14 +33,12 @@ int timeTick;
     
     timeTick = 0;
     [timer invalidate];
-    
     timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(myTicker) userInfo:nil repeats:YES];
     
     [self initImage];
     _toGoLabel.text = [NSString stringWithFormat:@"Items to Go: %ld", [_currentImage.objectsToBeFound count]];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(checkUserTap:)];
     [_imageInPlay addGestureRecognizer:tap];
-    
     _objectToFindLabel.text = [NSString stringWithFormat:@"I spy a %@.....", _currentImage.objectsToBeFound[0]];
     
 }
@@ -49,57 +47,10 @@ int timeTick;
     [super didReceiveMemoryWarning];
 }
 
-
-- (void)checkUserTap:(UITapGestureRecognizer *)recognizer {
-    CGPoint location = [recognizer locationInView:self.view];
-    NSNumber *myXFloat = [NSNumber numberWithFloat:floor(location.x)];
-    NSNumber *myYFloat = [NSNumber numberWithFloat:floor(location.y)];
-    
-    NSLog(@"%@", myXFloat);
-    NSLog(@"%@", myYFloat);
-    NSUInteger numberOfItems = [_currentImage.objectsToBeFound count];
-    for(int x = 0; x < numberOfItems; x++){
-        _objectToFindLabel.text = [NSString stringWithFormat:@"I spy a %@.....", _currentImage.objectsToBeFound[x]];
-        if ( myYFloat > _currentImage.locations[x][1] && myYFloat < _currentImage.locations[x][3] && myXFloat > _currentImage.locations[x][0] && myXFloat < _currentImage.locations[x][2]) {
-            NSLog(@"You found %@", _currentImage.objectsToBeFound[x]);
-            _foundLabel.text = [NSString stringWithFormat:@"Found: %i", x + 1];
-            if(x + 1 == numberOfItems){
-                [timer invalidate];
-                [self setUserhighScore: timeTick];
-                [self performSegueWithIdentifier:@"highScoreSegue" sender:self];
-            }
-        }else {
-            NSLog(@"Not correct");
-        }
-    }
-}
-
-
-- (void)setUserhighScore:(int)userNewTime{
-    for (User *user in _userDatabase) {
-        NSLog(@"%@",_currentUser.username);
-        if (user.username == _currentUser.username) {
-            NSLog(@"%d", userNewTime);
-            if (user.eyespy2HighScore < (double)userNewTime) {
-//                NSLog(@"%d", userNewTime);
-                user.eyespy2HighScore = (double)userNewTime;
-                NSLog(@"%f", user.eyespy2HighScore);
-            }
-        }
-    }
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    HighScoreViewController *vc =[segue destinationViewController];
-    vc.userDatabase = _userDatabase;
-    NSLog(@"%f", _currentUser.eyespy2HighScore);
-}
-
 - (void)initImage{
     
     image1 = [[Image alloc] init];
     image1.locations = @[@[@120, @240, @140, @274], @[@155,@213,@175,@228]];
-
     image1.objectsToBeFound = @[@"Number 6", @"Frog"];
     image1.image = [UIImage imageNamed:@"eyespy2.jpg"];
     
@@ -119,8 +70,53 @@ int timeTick;
     }
 }
 
+- (void)checkUserTap:(UITapGestureRecognizer *)recognizer {
+    
+    CGPoint location = [recognizer locationInView:self.view];
+    NSNumber *myXFloat = [NSNumber numberWithFloat:floor(location.x)];
+    NSNumber *myYFloat = [NSNumber numberWithFloat:floor(location.y)];
+    
+    NSLog(@"%@", myXFloat);
+    NSLog(@"%@", myYFloat);
+    
+    NSUInteger numberOfItems = [_currentImage.objectsToBeFound count];
+    for(int x = 0; x < numberOfItems; x++){
+        //BUG If frog clicked first game ends
+        _objectToFindLabel.text = [NSString stringWithFormat:@"I spy a %@.....", _currentImage.objectsToBeFound[x]];
+        if ( myYFloat > _currentImage.locations[x][1] && myYFloat < _currentImage.locations[x][3] && myXFloat > _currentImage.locations[x][0] && myXFloat < _currentImage.locations[x][2]) {
+            NSLog(@"You found %@", _currentImage.objectsToBeFound[x]);
+            _foundLabel.text = [NSString stringWithFormat:@"Found: %i", x + 1];
+            if(x + 1 == numberOfItems){
+                [timer invalidate];
+                [self setUserhighScore: timeTick];
+                [self performSegueWithIdentifier:@"highScoreSegue" sender:self];
+            }
+         // Bug Here Need always getting Not Correct
+        }else {
+            NSLog(@"Not correct");
+        }
+    }
+}
+
+- (void)setUserhighScore:(int)userNewTime{
+    for (User *user in _userDatabase) {
+        if (_currentUser.username == user.username) {
+            if (user.eyespy2HighScore < (double)userNewTime) {
+                user.eyespy2HighScore = (double)userNewTime;
+                NSLog(@"%f", user.eyespy2HighScore);
+            }
+        }
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    HighScoreViewController *vc =[segue destinationViewController];
+    vc.userDatabase = _userDatabase;
+}
+
+
 - (void)myTicker {
-    sleep(1);
+    sleep(.5);
     timeTick++;
     NSString *timeString =[[NSString alloc] initWithFormat:@"%d", timeTick];
     _timerLabel.text = timeString;

@@ -55,6 +55,8 @@
     //add the username and label to temporary database
     User *newUser = [[User alloc] initUser:_usernameLabel.text:_passwordLabel.text];
     [_userDatabase addObject:newUser];
+    // Need to set the current user to a user**************************************************************************
+    _currentUser = newUser;
     NSLog(@"%@: %@",newUser.username, newUser.password);
     //alert that their user account has been created
 //    UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"NO!" message:@"The username and password you entered is incorrect" preferredStyle:UIAlertControllerStyleAlert];
@@ -72,6 +74,8 @@
     // Pass the selected object to the new view controller.
     StartViewController *vc = [segue destinationViewController];
     vc.currentUser = _currentUser;
+    NSLog(@" Object: %@", vc.currentUser);
+    NSLog(@" Objects UserName *******%@", vc.currentUser.username);
     vc.userDatabase = _userDatabase;
 }
 
