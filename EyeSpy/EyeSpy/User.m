@@ -12,8 +12,8 @@
 -(id)initUser:username :password{
     self.username = username;
     self.password = password;
-    self.eyespy2HighScore = 80085;
-    self.eyespy3HighScore = 80085;
+    self.eyespy2HighScore = 59*10;
+    self.eyespy3HighScore = 59*10;
     return self;
 }
 

@@ -23,7 +23,7 @@ Image *image2;
 int objectPointer;
 // Timer Setup
 NSTimer *timer;
-int timeTick;
+double timeTick;
 
 @implementation GameViewController
 
@@ -33,7 +33,7 @@ int timeTick;
     
     timeTick = 0;
     [timer invalidate];
-    timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(myTicker) userInfo:nil repeats:YES];
+    timer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(myTicker) userInfo:nil repeats:YES];
     
     [self initImage];
     _toGoLabel.text = [NSString stringWithFormat:@"Items to Go: %ld", [_currentImage.objectsToBeFound count]];
@@ -43,6 +43,9 @@ int timeTick;
     
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    objectPointer = 0;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -87,7 +90,9 @@ int timeTick;
         if(objectPointer + 1 == numberOfItems){
             [timer invalidate];
             [self setUserhighScore: timeTick];
-            UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"Congrats!" message:[NSString stringWithFormat:@"You won\nYou finished in %d seconds", timeTick] preferredStyle:UIAlertControllerStyleAlert];
+            
+            //alert for finish
+            UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"Congrats!" message:[NSString stringWithFormat:@"You won\nYou finished in %@ seconds", [self formatInterval:timeTick]] preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"High Scores" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action)
                                           {
                                               [self performSegueWithIdentifier:@"highScoreSegue" sender:self];
@@ -101,15 +106,15 @@ int timeTick;
     }
 }
 
-- (void)setUserhighScore:(int)userNewTime{
+- (void)setUserhighScore:(double)userNewTime{
     for (User *user in _userDatabase) {
         if (_currentUser.username == user.username) {
-            if (user.eyespy2HighScore > (double)userNewTime && _currentImage == image1) {
-                user.eyespy2HighScore = (double)userNewTime;
+            if (user.eyespy2HighScore > userNewTime && _currentImage == image1) {
+                user.eyespy2HighScore = userNewTime;
                 NSLog(@"%f", user.eyespy2HighScore);
             }
-            if (user.eyespy3HighScore > (double)userNewTime && _currentImage == image2) {
-                user.eyespy3HighScore = (double)userNewTime;
+            if (user.eyespy3HighScore > userNewTime && _currentImage == image2) {
+                user.eyespy3HighScore = userNewTime;
                 NSLog(@"%f", user.eyespy3HighScore);
             }
         }
@@ -119,13 +124,33 @@ int timeTick;
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     HighScoreViewController *vc =[segue destinationViewController];
     vc.userDatabase = _userDatabase;
+    vc.currentUser = _currentUser;
 }
 
-
+- (NSString *) formatInterval: (NSTimeInterval) interval{
+    unsigned long milliseconds = interval;
+    unsigned long seconds = milliseconds / 10;
+    milliseconds %= 1000;
+    unsigned long minutes = seconds / 60;
+    seconds %= 60;
+    unsigned long hours = minutes / 60;
+    minutes %= 60;
+    
+    NSMutableString * result = [NSMutableString new];
+    
+    if(hours)
+//        [result appendFormat: @"%ld:", hours];
+    
+    [result appendFormat: @"%ld:", minutes];
+    [result appendFormat: @"%ld:", seconds];
+    [result appendFormat: @"%ld",milliseconds];
+    
+    return result;
+}
 - (void)myTicker {
     sleep(.5);
     timeTick++;
-    NSString *timeString =[[NSString alloc] initWithFormat:@"%d", timeTick];
+    NSString *timeString =[self formatInterval:timeTick];
     _timerLabel.text = timeString;
    
 }
