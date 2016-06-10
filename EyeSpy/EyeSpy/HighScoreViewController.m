@@ -8,8 +8,11 @@
 
 #import "HighScoreViewController.h"
 #import "User.h"
+#import "StartViewController.h"
 
 @interface HighScoreViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *table1;
+@property (weak, nonatomic) IBOutlet UITableView *table2;
 
 @end
 
@@ -37,22 +40,57 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    cell.textLabel.text = [NSString stringWithFormat:@"%f",[[_userDatabase objectAtIndex:indexPath.row] eyespy2HighScore]];
-    // Configure the cell...
-    //    cell.textLabel.text = NSStringFromClass([[_classes objectAtIndex:indexPath.row] class]);
-//    cell.textLabel.text = [[_classes objectAtIndex:indexPath.row] sayName];
-    return cell;
+    if(tableView == _table1){
+        NSArray *eyespy2Sorted = [_userDatabase sortedArrayUsingSelector:@selector(compareEyespy2:)];
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+        cell.textLabel.text = [[eyespy2Sorted  objectAtIndex:indexPath.row] username];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@s",[self formatInterval:[[eyespy2Sorted  objectAtIndex:indexPath.row] eyespy2HighScore]]];
+        return cell;
+    } else {
+        NSArray *eyespy3Sorted = [_userDatabase sortedArrayUsingSelector:@selector(compareEyespy3:)];
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell2" forIndexPath:indexPath];
+        cell.textLabel.text = [[eyespy3Sorted objectAtIndex:indexPath.row] username];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@s",[self formatInterval:[[eyespy3Sorted objectAtIndex:indexPath.row] eyespy3HighScore]]];
+        return cell;
+    }
 }
 
-/*
+- (NSString *) formatInterval: (NSTimeInterval) interval{
+    unsigned long milliseconds = interval;
+    unsigned long seconds = milliseconds / 10;
+    milliseconds %= 1000;
+    unsigned long minutes = seconds / 60;
+    seconds %= 60;
+    unsigned long hours = minutes / 60;
+    minutes %= 60;
+    
+    NSMutableString * result = [NSMutableString new];
+    
+    if(hours)
+//        [result appendFormat: @"%ld:", hours];
+    
+    [result appendFormat: @"%ld:", minutes];
+    [result appendFormat: @"%ld:", seconds];
+    [result appendFormat: @"%ld",milliseconds];
+    
+    return result;
+}
+
+//- (IBAction)tryAgainPressed{
+//    [self performSegueWithIdentifier:@"tryAgainSegue" sender:self];
+//}
+
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    StartViewController *vc =[segue destinationViewController];
+    vc.userDatabase = _userDatabase;
+    vc.currentUser = _currentUser;
 }
-*/
+
 
 @end

@@ -12,8 +12,16 @@
 -(id)initUser:username :password{
     self.username = username;
     self.password = password;
-    self.eyespy2HighScore = 0;
-    self.eyespy3HighScore = 0;
+    self.eyespy2HighScore = 59*10;
+    self.eyespy3HighScore = 59*10;
     return self;
+}
+
+- (NSComparisonResult)compareEyespy2:(User *)otherObject {
+    return self.eyespy2HighScore > otherObject.eyespy2HighScore;
+}
+
+- (NSComparisonResult)compareEyespy3:(User *)otherObject {
+    return self.eyespy3HighScore > otherObject.eyespy3HighScore;
 }
 @end

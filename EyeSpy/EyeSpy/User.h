@@ -15,4 +15,6 @@
 @property NSTimeInterval eyespy2HighScore;
 @property NSTimeInterval eyespy3HighScore;
 -(id)initUser:username :password;
+- (NSComparisonResult)compareEyespy2:(User *)otherObject;
+- (NSComparisonResult)compareEyespy3:(User *)otherObject;
 @end
