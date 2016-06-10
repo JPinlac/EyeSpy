@@ -13,6 +13,7 @@
 @interface HighScoreViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *table1;
 @property (weak, nonatomic) IBOutlet UITableView *table2;
+@property (weak, nonatomic) IBOutlet UIButton *tryAgainButton;
 
 @end
 
@@ -22,6 +23,9 @@ User *thePlayerHighScore;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _tryAgainButton.layer.cornerRadius = 3;
+    _tryAgainButton.layer.borderWidth = 1;
+    _tryAgainButton.layer.borderColor = [UIColor blackColor].CGColor;
     thePlayerHighScore = [[User currentUser]init];
 }
 

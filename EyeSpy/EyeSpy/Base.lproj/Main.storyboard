@@ -255,6 +255,7 @@
                     </view>
                     <connections>
                         <outlet property="foundLabel" destination="6Zw-UX-wCQ" id="nSX-hW-wup"/>
+                        <outlet property="giveUpButton" destination="wCL-Hm-eGJ" id="UF0-xq-nYe"/>
                         <outlet property="imageInPlay" destination="t86-z5-fAP" id="zFv-bc-NCF"/>
                         <outlet property="objectToFindLabel" destination="0vY-Ix-CX1" id="qmJ-iF-Y2A"/>
                         <outlet property="timerLabel" destination="M6K-jf-ZaM" id="MwR-2Y-YLQ"/>
@@ -405,6 +406,7 @@
                     <connections>
                         <outlet property="table1" destination="iWa-f9-kwd" id="XIr-m0-VRw"/>
                         <outlet property="table2" destination="IWa-PX-VmU" id="a3u-97-CEm"/>
+                        <outlet property="tryAgainButton" destination="7Cq-Hc-t5I" id="E3N-qX-m7V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g9w-6d-Fb7" userLabel="First Responder" sceneMemberID="firstResponder"/>

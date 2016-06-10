@@ -13,6 +13,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *toGoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *objectToFindLabel;
+@property (weak, nonatomic) IBOutlet UIButton *giveUpButton;
+
 
 @property Image *currentImage;
 @end
@@ -33,6 +35,9 @@ User *thePlayerInGame;
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    _giveUpButton.layer.cornerRadius = 3;
+    _giveUpButton.layer.borderWidth = 1;
+    _giveUpButton.layer.borderColor = [UIColor blackColor].CGColor;
     
     timeTick = 0;
     [timer invalidate];
