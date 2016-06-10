@@ -15,8 +15,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordLabel;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIButton *createAccountButton;
-@property User *currentUser;
+//@property User *currentUser;
+
 @end
+User *newUser;
 
 @implementation LoginViewController
 
@@ -45,6 +47,8 @@
     //checks to see if username is in database, then checks if the password matches
     for(id object in _userDatabase){
         if([_usernameLabel.text isEqualToString:[object username]] && [_passwordLabel.text isEqualToString:[object password]]){
+            newUser = [[User currentUser] initUser:[object username] :[object password] :[object eyespy2HighScore] :[object eyespy3HighScore]];
+
             [self performSegueWithIdentifier:@"startSegue" sender:self];
         }
     }
@@ -55,10 +59,11 @@
 }
 -(IBAction)createAccount{
     //add the username and label to temporary database
-    User *newUser = [[User alloc] initUser:_usernameLabel.text:_passwordLabel.text];
+//    User *newUser = [[User alloc] initUser:_usernameLabel.text:_passwordLabel.text];
+    newUser = [[User currentUser] initUser:_usernameLabel.text :_passwordLabel.text];
     [_userDatabase addObject:newUser];
     // Need to set the current user to a user**************************************************************************
-    _currentUser = newUser;
+    
     NSLog(@"%@: %@",newUser.username, newUser.password);
     //alert that their user account has been created
 //    UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"NO!" message:@"The username and password you entered is incorrect" preferredStyle:UIAlertControllerStyleAlert];
@@ -75,9 +80,6 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     StartViewController *vc = [segue destinationViewController];
-    vc.currentUser = _currentUser;
-    NSLog(@" Object: %@", vc.currentUser);
-    NSLog(@" Objects UserName *******%@", vc.currentUser.username);
     vc.userDatabase = _userDatabase;
 }
 

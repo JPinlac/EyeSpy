@@ -55,8 +55,6 @@
     GameViewController *vc = [segue destinationViewController];
 
     vc.selectedImage = _selectedImage;
-    vc.currentUser = _currentUser;
-    NSLog(@"If currentUser is used: %@", _currentUser.username);
     vc.userDatabase = _userDatabase;
 }
 
