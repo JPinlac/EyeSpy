@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "User.h"
 #import "StartViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameLabel;
@@ -23,6 +24,9 @@
 - (void)viewDidLoad {
     [self  initUserDatabase];
     [super viewDidLoad];
+    _loginButton.layer.cornerRadius = 3;
+    _loginButton.layer.borderWidth = 1;
+    _loginButton.layer.borderColor = [UIColor blackColor].CGColor;
     // Do any additional setup after loading the view.
 }
 
