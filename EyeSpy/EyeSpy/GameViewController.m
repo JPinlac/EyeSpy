@@ -20,7 +20,7 @@
 // Instance of Image Class
 Image *image1;
 Image *image2;
-
+int objectPointer;
 // Timer Setup
 NSTimer *timer;
 int timeTick;
@@ -80,21 +80,18 @@ int timeTick;
     NSLog(@"%@", myYFloat);
     
     NSUInteger numberOfItems = [_currentImage.objectsToBeFound count];
-    for(int x = 0; x < numberOfItems; x++){
-        //BUG If frog clicked first game ends
-        _objectToFindLabel.text = [NSString stringWithFormat:@"I spy a %@.....", _currentImage.objectsToBeFound[x]];
-        if ( myYFloat > _currentImage.locations[x][1] && myYFloat < _currentImage.locations[x][3] && myXFloat > _currentImage.locations[x][0] && myXFloat < _currentImage.locations[x][2]) {
-            NSLog(@"You found %@", _currentImage.objectsToBeFound[x]);
-            _foundLabel.text = [NSString stringWithFormat:@"Found: %i", x + 1];
-            if(x + 1 == numberOfItems){
-                [timer invalidate];
-                [self setUserhighScore: timeTick];
-                [self performSegueWithIdentifier:@"highScoreSegue" sender:self];
-            }
-         // Bug Here Need always getting Not Correct
-        }else {
-            NSLog(@"Not correct");
+    _objectToFindLabel.text = [NSString stringWithFormat:@"I spy a %@.....", _currentImage.objectsToBeFound[objectPointer]];
+    if ( myYFloat > _currentImage.locations[objectPointer][1] && myYFloat < _currentImage.locations[objectPointer][3] && myXFloat > _currentImage.locations[objectPointer][0] && myXFloat < _currentImage.locations[objectPointer][2]) {
+        NSLog(@"You found %@", _currentImage.objectsToBeFound[objectPointer]);
+        _foundLabel.text = [NSString stringWithFormat:@"Found: %i", objectPointer + 1];
+        if(objectPointer + 1 == numberOfItems){
+            [timer invalidate];
+            [self setUserhighScore: timeTick];
+            [self performSegueWithIdentifier:@"highScoreSegue" sender:self];
         }
+        objectPointer++;
+    }else {
+        NSLog(@"Not correct");
     }
 }
 

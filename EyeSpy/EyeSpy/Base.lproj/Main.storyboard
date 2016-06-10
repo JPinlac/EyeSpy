@@ -169,9 +169,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCL-Hm-eGJ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCL-Hm-eGJ">
                                 <rect key="frame" x="103" y="499" width="114" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="FAN-Hw-hr3"/>
+                                    <constraint firstAttribute="width" constant="114" id="mmj-G6-i5y"/>
+                                </constraints>
                                 <state key="normal" title="Give up">
                                     <color key="titleColor" red="0.0" green="1" blue="1" alpha="0.80320581896551724" colorSpace="calibratedRGB"/>
                                 </state>
@@ -186,26 +190,48 @@
                                     <constraint firstAttribute="width" constant="280" id="maX-40-3NG"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Found: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Zw-UX-wCQ">
-                                <rect key="frame" x="80" y="322" width="161" height="42"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Found: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Zw-UX-wCQ">
+                                <rect key="frame" x="80" y="338" width="161" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="161" id="5UA-1X-TxN"/>
+                                    <constraint firstAttribute="height" constant="42" id="qkg-PI-98q"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="IowanOldStyle-Roman" family="Iowan Old Style" pointSize="22"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Items to Go: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhb-J3-2vR">
-                                <rect key="frame" x="80" y="372" width="161" height="54"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Items to Go: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhb-J3-2vR">
+                                <rect key="frame" x="80" y="388" width="161" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="161" id="aLa-C5-fkh"/>
+                                    <constraint firstAttribute="height" constant="54" id="cD8-MN-DdN"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="IowanOldStyle-Roman" family="Iowan Old Style" pointSize="22"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="I spy a banana." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vY-Ix-CX1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I spy a banana." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vY-Ix-CX1">
                                 <rect key="frame" x="20" y="38" width="280" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="FEQ-9I-PsH"/>
+                                    <constraint firstAttribute="width" constant="280" id="Urb-9l-qaq"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="IowanOldStyle-Roman" family="Iowan Old Style" pointSize="22"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6K-jf-ZaM">
-                                <rect key="frame" x="103" y="434" width="114" height="41"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6K-jf-ZaM">
+                                <rect key="frame" x="103" y="450" width="114" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="114" id="L02-Mv-0Mq"/>
+                                    <constraint firstAttribute="height" constant="41" id="TQR-nR-zJK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="IowanOldStyle-Roman" family="Iowan Old Style" pointSize="22"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgo-rd-dLn">
+                                <rect key="frame" x="80" y="288" width="161" height="42"/>
                                 <fontDescription key="fontDescription" name="IowanOldStyle-Roman" family="Iowan Old Style" pointSize="22"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -213,7 +239,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="0vY-Ix-CX1" firstAttribute="centerX" secondItem="ARl-W7-E6w" secondAttribute="centerX" id="Fet-ne-rjQ"/>
+                            <constraint firstItem="wCL-Hm-eGJ" firstAttribute="centerX" secondItem="ARl-W7-E6w" secondAttribute="centerX" id="Ii7-To-2ta"/>
+                            <constraint firstItem="lhb-J3-2vR" firstAttribute="centerY" secondItem="ARl-W7-E6w" secondAttribute="centerY" constant="131" id="MCb-BV-NXz"/>
+                            <constraint firstItem="0vY-Ix-CX1" firstAttribute="centerY" secondItem="ARl-W7-E6w" secondAttribute="centerY" constant="-231" id="P4K-nN-HJa"/>
+                            <constraint firstItem="6Zw-UX-wCQ" firstAttribute="centerY" secondItem="ARl-W7-E6w" secondAttribute="centerY" constant="75" id="QVA-kV-wzY"/>
+                            <constraint firstItem="lhb-J3-2vR" firstAttribute="centerX" secondItem="ARl-W7-E6w" secondAttribute="centerX" id="SX3-OV-LFP"/>
+                            <constraint firstItem="wCL-Hm-eGJ" firstAttribute="centerY" secondItem="ARl-W7-E6w" secondAttribute="centerY" constant="230" id="TGt-gI-byo"/>
                             <constraint firstItem="t86-z5-fAP" firstAttribute="centerY" secondItem="ARl-W7-E6w" secondAttribute="centerY" constant="-107.5" id="jKy-jD-ShN"/>
+                            <constraint firstItem="M6K-jf-ZaM" firstAttribute="centerX" secondItem="ARl-W7-E6w" secondAttribute="centerX" id="ok6-3c-ma4"/>
+                            <constraint firstItem="M6K-jf-ZaM" firstAttribute="centerY" secondItem="ARl-W7-E6w" secondAttribute="centerY" constant="186.5" id="ufv-2R-jvs"/>
+                            <constraint firstItem="6Zw-UX-wCQ" firstAttribute="centerX" secondItem="ARl-W7-E6w" secondAttribute="centerX" id="xgY-qR-jjt"/>
                             <constraint firstItem="t86-z5-fAP" firstAttribute="centerX" secondItem="ARl-W7-E6w" secondAttribute="centerX" id="z7E-zY-rc3"/>
                         </constraints>
                     </view>
@@ -249,7 +285,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pjU-qG-Jv8" id="ocJ-Yf-YPF">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
