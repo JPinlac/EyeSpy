@@ -11,5 +11,5 @@
 
 @interface HighScoreViewController : UIViewController
 @property (strong, nonatomic) NSMutableArray *userDatabase;
-@property User *currentUser;
+
 @end

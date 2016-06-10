@@ -58,6 +58,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		430352881D0B23FD00C97B32 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4303525B1D09ABF700C97B32 /* Image.h */,
+				4303525C1D09ABF700C97B32 /* Image.m */,
+				43C02FC41D09AE7F00FAC707 /* User.h */,
+				43C02FC51D09AE7F00FAC707 /* User.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		430E20561D08A82E00265984 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,10 +103,7 @@
 		4310B1FA1D089A190037D2D0 /* EyeSpy */ = {
 			isa = PBXGroup;
 			children = (
-				4303525B1D09ABF700C97B32 /* Image.h */,
-				4303525C1D09ABF700C97B32 /* Image.m */,
-				43C02FC41D09AE7F00FAC707 /* User.h */,
-				43C02FC51D09AE7F00FAC707 /* User.m */,
+				430352881D0B23FD00C97B32 /* Models */,
 				4310B1FE1D089A190037D2D0 /* AppDelegate.h */,
 				4310B1FF1D089A190037D2D0 /* AppDelegate.m */,
 				430E20561D08A82E00265984 /* Controllers */,

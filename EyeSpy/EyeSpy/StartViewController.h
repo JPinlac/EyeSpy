@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "User.h"
 @interface StartViewController : UIViewController
-@property User *currentUser;
+//@property User *currentUser;
 @property NSMutableArray *userDatabase;
 @end

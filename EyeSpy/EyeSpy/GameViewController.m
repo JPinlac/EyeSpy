@@ -25,6 +25,9 @@ int objectPointer;
 NSTimer *timer;
 double timeTick;
 
+
+User *thePlayerInGame;
+
 @implementation GameViewController
 
 - (void)viewDidLoad {
@@ -40,6 +43,9 @@ double timeTick;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(checkUserTap:)];
     [_imageInPlay addGestureRecognizer:tap];
     _objectToFindLabel.text = [NSString stringWithFormat:@"I spy a %@.....", _currentImage.objectsToBeFound[0]];
+    
+    
+    thePlayerInGame =[[User currentUser]init];
     
 }
 
@@ -108,14 +114,14 @@ double timeTick;
 
 - (void)setUserhighScore:(double)userNewTime{
     for (User *user in _userDatabase) {
-        if (_currentUser.username == user.username) {
+
+        if (thePlayerInGame.username == user.username) {
+            
             if (user.eyespy2HighScore > userNewTime && _currentImage == image1) {
                 user.eyespy2HighScore = userNewTime;
-                NSLog(@"%f", user.eyespy2HighScore);
             }
             if (user.eyespy3HighScore > userNewTime && _currentImage == image2) {
                 user.eyespy3HighScore = userNewTime;
-                NSLog(@"%f", user.eyespy3HighScore);
             }
         }
     }
@@ -124,7 +130,6 @@ double timeTick;
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     HighScoreViewController *vc =[segue destinationViewController];
     vc.userDatabase = _userDatabase;
-    vc.currentUser = _currentUser;
 }
 
 - (NSString *) formatInterval: (NSTimeInterval) interval{
