@@ -19,6 +19,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _game1.layer.cornerRadius = 3;
+    _game1.layer.borderWidth = 1;
+    _game1.layer.borderColor = [UIColor blackColor].CGColor;
+    _game2.layer.cornerRadius = 3;
+    _game2.layer.borderWidth = 1;
+    _game2.layer.borderColor = [UIColor blackColor].CGColor;
     UITapGestureRecognizer *tapImage1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(image1Tapped:)];
     UITapGestureRecognizer *tapImage2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(image2Tapped:)];
     

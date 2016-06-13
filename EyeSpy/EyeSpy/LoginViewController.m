@@ -9,14 +9,13 @@
 #import "LoginViewController.h"
 #import "User.h"
 #import "StartViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameLabel;
 @property (weak, nonatomic) IBOutlet UITextField *passwordLabel;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIButton *createAccountButton;
-//@property User *currentUser;
-
 @end
 User *newUser;
 
@@ -25,7 +24,12 @@ User *newUser;
 - (void)viewDidLoad {
     [self  initUserDatabase];
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    _loginButton.layer.cornerRadius = 3;
+    _loginButton.layer.borderWidth = 1;
+    _loginButton.layer.borderColor = [UIColor blackColor].CGColor;
+    _createAccountButton.layer.cornerRadius = 3;
+    _createAccountButton.layer.borderWidth = 1;
+    _createAccountButton.layer.borderColor = [UIColor blackColor].CGColor;
 }
 
 - (void)didReceiveMemoryWarning {

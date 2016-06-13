@@ -20,6 +20,7 @@
 		4310B2081D089A190037D2D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4310B2071D089A190037D2D0 /* Assets.xcassets */; };
 		4310B20B1D089A190037D2D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4310B2091D089A190037D2D0 /* LaunchScreen.storyboard */; };
 		43C02FC61D09AE7F00FAC707 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C02FC51D09AE7F00FAC707 /* User.m */; };
+		43C02FE31D0EF30100FAC707 /* UIColor+UIColor_Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C02FE21D0EF30100FAC707 /* UIColor+UIColor_Colours.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,8 @@
 		4310B20C1D089A190037D2D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43C02FC41D09AE7F00FAC707 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		43C02FC51D09AE7F00FAC707 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		43C02FE11D0EF30100FAC707 /* UIColor+UIColor_Colours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+UIColor_Colours.h"; sourceTree = "<group>"; };
+		43C02FE21D0EF30100FAC707 /* UIColor+UIColor_Colours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+UIColor_Colours.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				430352881D0B23FD00C97B32 /* Models */,
+				43C02FE11D0EF30100FAC707 /* UIColor+UIColor_Colours.h */,
+				43C02FE21D0EF30100FAC707 /* UIColor+UIColor_Colours.m */,
 				4310B1FE1D089A190037D2D0 /* AppDelegate.h */,
 				4310B1FF1D089A190037D2D0 /* AppDelegate.m */,
 				430E20561D08A82E00265984 /* Controllers */,
@@ -199,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43C02FC61D09AE7F00FAC707 /* User.m in Sources */,
+				43C02FE31D0EF30100FAC707 /* UIColor+UIColor_Colours.m in Sources */,
 				430E204F1D08A80000265984 /* GameViewController.m in Sources */,
 				430E204C1D08A7CE00265984 /* StartViewController.m in Sources */,
 				4310B2001D089A190037D2D0 /* AppDelegate.m in Sources */,

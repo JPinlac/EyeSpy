@@ -7,12 +7,16 @@
 //
 #import "GameViewController.h"
 #import "HighScoreViewController.h"
+#import "Colors.h"
+#import "UIColor+UIColor_Colours.h"
 
 @interface GameViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *foundLabel;
 @property (weak, nonatomic) IBOutlet UILabel *toGoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *objectToFindLabel;
+@property (weak, nonatomic) IBOutlet UIButton *giveUpButton;
+
 
 @property Image *currentImage;
 @end
@@ -33,6 +37,9 @@ User *thePlayerInGame;
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    _giveUpButton.layer.cornerRadius = 3;
+    _giveUpButton.layer.borderWidth = 1;
+    _giveUpButton.layer.borderColor = [UIColor blackColor].CGColor;
     
     timeTick = 0;
     [timer invalidate];
@@ -91,6 +98,7 @@ User *thePlayerInGame;
     NSUInteger numberOfItems = [_currentImage.objectsToBeFound count];
     _objectToFindLabel.text = [NSString stringWithFormat:@"I spy a %@.....", _currentImage.objectsToBeFound[objectPointer]];
     if ( myYFloat > _currentImage.locations[objectPointer][1] && myYFloat < _currentImage.locations[objectPointer][3] && myXFloat > _currentImage.locations[objectPointer][0] && myXFloat < _currentImage.locations[objectPointer][2]) {
+        self.view.backgroundColor = [UIColor floraColor];
         NSLog(@"You found %@", _currentImage.objectsToBeFound[objectPointer]);
         _foundLabel.text = [NSString stringWithFormat:@"Found: %i", objectPointer + 1];
         if(objectPointer + 1 == numberOfItems){
@@ -109,6 +117,7 @@ User *thePlayerInGame;
         objectPointer++;
     }else {
         NSLog(@"Not correct");
+        self.view.backgroundColor = [UIColor salmonColor];
     }
 }
 

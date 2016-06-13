@@ -47,7 +47,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTr-Br-z9j">
                                 <rect key="frame" x="56" y="329" width="209" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="A8M-FS-MMe"/>
                                     <constraint firstAttribute="width" constant="209" id="wzX-JB-kr7"/>
@@ -61,7 +61,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCe-Ip-bNT">
                                 <rect key="frame" x="56" y="291" width="209" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="209" id="0ba-Q2-zyB"/>
                                     <constraint firstAttribute="height" constant="30" id="qE7-Cb-VIT"/>
@@ -74,7 +74,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.99607843137254903" green="0.76078431372549016" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="WGc-8P-nlC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-212" id="1Xy-58-Gr3"/>
                             <constraint firstItem="HCe-Ip-bNT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6dg-mq-ZqE"/>
@@ -137,7 +137,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="LQc-KK-T1u" firstAttribute="centerY" secondItem="Zf1-H7-dSl" secondAttribute="centerY" constant="-90" id="FCr-QM-LUf"/>
                             <constraint firstItem="Tb4-0W-DAh" firstAttribute="centerX" secondItem="Zf1-H7-dSl" secondAttribute="centerX" id="TYP-h3-cZr"/>
@@ -237,7 +237,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="0vY-Ix-CX1" firstAttribute="centerX" secondItem="ARl-W7-E6w" secondAttribute="centerX" id="Fet-ne-rjQ"/>
                             <constraint firstItem="wCL-Hm-eGJ" firstAttribute="centerX" secondItem="ARl-W7-E6w" secondAttribute="centerX" id="Ii7-To-2ta"/>
@@ -255,6 +255,7 @@
                     </view>
                     <connections>
                         <outlet property="foundLabel" destination="6Zw-UX-wCQ" id="nSX-hW-wup"/>
+                        <outlet property="giveUpButton" destination="wCL-Hm-eGJ" id="UF0-xq-nYe"/>
                         <outlet property="imageInPlay" destination="t86-z5-fAP" id="zFv-bc-NCF"/>
                         <outlet property="objectToFindLabel" destination="0vY-Ix-CX1" id="qmJ-iF-Y2A"/>
                         <outlet property="timerLabel" destination="M6K-jf-ZaM" id="MwR-2Y-YLQ"/>
@@ -341,7 +342,7 @@
                                                     <rect key="frame" x="223.5" y="12" width="41.5" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -388,7 +389,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="7Cq-Hc-t5I" firstAttribute="centerY" secondItem="ZHE-AU-8SG" secondAttribute="centerY" constant="249" id="6r7-ha-ZO8"/>
                             <constraint firstItem="IWa-PX-VmU" firstAttribute="centerY" secondItem="ZHE-AU-8SG" secondAttribute="centerY" constant="123.5" id="AkO-Qi-bmh"/>
@@ -405,6 +406,7 @@
                     <connections>
                         <outlet property="table1" destination="iWa-f9-kwd" id="XIr-m0-VRw"/>
                         <outlet property="table2" destination="IWa-PX-VmU" id="a3u-97-CEm"/>
+                        <outlet property="tryAgainButton" destination="7Cq-Hc-t5I" id="E3N-qX-m7V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g9w-6d-Fb7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -417,6 +419,6 @@
         <image name="eyespy3.jpeg" width="259" height="194"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xiH-2f-0QC"/>
+        <segue reference="2r8-dd-D5Q"/>
     </inferredMetricsTieBreakers>
 </document>
